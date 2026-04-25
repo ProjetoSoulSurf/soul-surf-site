@@ -3,7 +3,7 @@
 // Resolve URLs from this script location so it works in Vite and plain static servers.
 const siteBase = new URL('../', import.meta.url)
 const siteUrl = (path) => new URL(path, siteBase).toString()
-const logoUrl = new URL('fotos/logo-soul-surf.png', siteBase).href
+const logoUrl = new URL('images/logo-soul-surf.png', siteBase).href
 const homeUrl = siteUrl('index.html')
 const homePathname = new URL(homeUrl).pathname
 const currentPathname = window.location.pathname
