@@ -11,7 +11,7 @@ function collectHtmlInputs(dir, baseDir = dir, inputs = {}) {
 
     if (entry.isDirectory()) {
       // Skip build/dependency/static-source folders during entry discovery.
-      if (entry.name === 'dist' || entry.name === 'node_modules' || entry.name === 'public' || entry.name === 'templates' || entry.name === 'pages') continue
+      if (['dist', 'node_modules', 'public', 'src/components', 'src/styles', 'src/scripts'].includes(entry.name)) continue
       collectHtmlInputs(fullPath, baseDir, inputs)
       continue
     }

@@ -1,29 +1,33 @@
 // Shared JavaScript for navbar, footer, and modals
+// ✨ Refactored for clean code structure
+
+// Import configuration
+import { URLS, ASSETS, PROJECT, EXTERNAL_LINKS } from '../src/config.js'
 
 // Resolve URLs from this script location so it works in Vite and plain static servers.
 const siteBase = new URL('../', import.meta.url)
 const siteUrl = (path) => new URL(path, siteBase).toString()
-const logoUrl = new URL('fotos/logo-soul-surf.png', siteBase).href
-const homeUrl = siteUrl('index.html')
+const logoUrl = ASSETS.images.logo
+const homeUrl = siteUrl('src/pages/home/index.html')
 const homePathname = new URL(homeUrl).pathname
 const currentPathname = window.location.pathname
 const isHomePage = currentPathname === homePathname || currentPathname === `${homePathname.replace(/index\.html$/, '')}`
 
 const urls = {
   home: homeUrl,
-  about: siteUrl('sobre.html'),
-  gallery: siteUrl('galeria.html'),
-  initiatives: siteUrl('iniciativas.html'),
-  support: siteUrl('apoie-o-soul-surf.html'),
-  transparency: siteUrl('transparencia.html'),
-  contact: siteUrl('contato.html'),
+  about: siteUrl('src/pages/about/sobre.html'),
+  gallery: siteUrl('src/pages/gallery/galeria.html'),
+  initiatives: siteUrl('src/pages/initiatives/iniciativas.html'),
+  support: siteUrl('src/pages/support/support-us.html'),
+  transparency: siteUrl('src/pages/about/transparency.html'),
+  contact: siteUrl('src/pages/about/contact.html'),
   blog: isHomePage ? '#blog' : `${homeUrl}#blog`,
-  mvv: `${siteUrl('sobre.html')}#mvv`,
+  mvv: `${siteUrl('src/pages/about/sobre.html')}#mvv`,
   water: isHomePage ? '#water' : `${homeUrl}#water`,
   sponsors: isHomePage ? '#sponsors' : `${homeUrl}#sponsors`,
-  terms: siteUrl('termos-de-uso.html'),
-  privacy: siteUrl('politica-de-privacidade.html'),
-  cookies: siteUrl('politica-cookies.html'),
+  terms: siteUrl('src/pages/legal/terms-of-use.html'),
+  privacy: siteUrl('src/pages/legal/privacy-policy.html'),
+  cookies: siteUrl('src/pages/legal/cookie-policy.html'),
   logo: logoUrl,
 }
 
