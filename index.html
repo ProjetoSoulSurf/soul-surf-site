@@ -451,6 +451,7 @@
     .cta-content h2 em { color: var(--blue); font-style: normal; }
     .cta-content p { font-size: 18px; color: rgba(255,255,255,.55); max-width: 540px; margin: 0 auto 52px; line-height: 1.72; }
     .cta-btns { display: flex; justify-content: center; gap: 16px; flex-wrap: wrap; }
+    .cta-content { text-align: center; }
 
     /* ========== RESPONSIVIDADE ========== */
     @media (max-width: 1024px) {
@@ -475,10 +476,10 @@
       .gallery-item.tall,
       .gallery-item.square { grid-column: span 1; min-height: 230px; }
       .sponsor-item { width: 150px; height: 82px; }
-      .hero-ctas { flex-direction: column; align-items: flex-start; }
-      .hero-ctas .btn,
-      .water-btns .btn,
-      .cta-btns .btn { width: min(100%, 320px); justify-content: center; }
+      .hero-ctas { flex-direction: column; align-items: center; }
+      .hero-ctas .btn { width: 100%; max-width: 100%; min-width: 0; justify-content: center; }
+      .water-btns .btn { width: 100%; justify-content: center; }
+      .cta-btns .btn { width: 100%; justify-content: center; }
       .hero-title { font-size: clamp(40px, 15vw, 64px); }
       .hero-subtitle { font-size: 16px; }
       .hero-desc { font-size: 15px; margin-bottom: 28px; }
@@ -498,21 +499,6 @@
     .projects-cta {
   text-align: center;
   margin-top: 2rem;
-}
-
-.btn-primary {
-  display: inline-block;
-  padding: 12px 24px;
-  background-color: var(--blue);
-  color: #fff;
-  text-decoration: none;
-  border-radius: 8px;
-  font-weight: 600;
-  transition: 0.3s;
-}
-
-.btn-primary:hover {
-  background-color: var(--blue);
 }
   </style>
 </head>
@@ -692,7 +678,7 @@
 
     <!-- BOTÃO -->
     <div class="projects-cta">
-      <a href="iniciativas.html" class="btn-primary">
+      <a href="iniciativas.html" class="btn btn-primary">
         Conheça todas as iniciativas
       </a>
     </div>
