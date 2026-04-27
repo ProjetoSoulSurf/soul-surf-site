@@ -104,9 +104,7 @@ function loadSharedFooter() {
               <li><a href="${urls.initiatives}">Iniciativas</a></li>
               <li><a href="${urls.support}">Apoie o Soul Surf</a></li>
               <li><a href="${urls.gallery}">Galeria</a></li>
-              <li><a href="${urls.blog}">Blog</a></li>
               <li><a href="${urls.mvv}">Missão, Visão e Valores</a></li>
-              <li><a href="${urls.water}">Campanha Água</a></li>
             </ul>
           </div>
 
