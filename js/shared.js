@@ -86,7 +86,7 @@ function loadSharedFooter() {
         <div class="footer-grid">
           <div class="footer-brand">
             <a href="${urls.home}" style="display:inline-flex;align-items:center;gap:12px;color:#fff;" aria-label="Soul Surf — voltar ao início">
-              <div class=".webp" aria-hidden="true">
+              <div class="nav-logo-icon" aria-hidden="true">
                 <img src="${urls.logo}" alt="Crianças do Projeto Soul Surf" />
               </div>
               <div class="nav-logo-text">
