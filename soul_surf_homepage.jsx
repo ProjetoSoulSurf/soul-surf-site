@@ -22,15 +22,15 @@ const heroSlides = [
     alt: "Surfista no mar representando transformação e esperança",
   },
   {
-    image: "/fotos/IMG_4654.JPG",
+    image: "/fotos/IMG_4654.webp",
     alt: "Evento Soul Surf - Foto 2",
   },
   {
-    image: "/fotos/IMG_4146.JPG",
+    image: "/fotos/IMG_4146.webp",
     alt: "Evento Soul Surf - Foto 3",
   },
   {
-    image: "/fotos/IMG_4449.JPG",
+    image: "/fotos/IMG_4449.webp",
     alt: "Evento Soul Surf - Foto 4",
   },
 ];

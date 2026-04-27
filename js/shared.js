@@ -3,7 +3,7 @@
 // Resolve URLs from this script location so it works in Vite and plain static servers.
 const siteBase = new URL('../', import.meta.url)
 const siteUrl = (path) => new URL(path, siteBase).toString()
-const logoUrl = new URL('images/logo-soul-surf.png', siteBase).href
+const logoUrl = new URL('images/logo-soul-surf.webp', siteBase).href
 const homeUrl = siteUrl('index.html')
 const homePathname = new URL(homeUrl).pathname
 const currentPathname = window.location.pathname
@@ -86,7 +86,7 @@ function loadSharedFooter() {
         <div class="footer-grid">
           <div class="footer-brand">
             <a href="${urls.home}" style="display:inline-flex;align-items:center;gap:12px;color:#fff;" aria-label="Soul Surf — voltar ao início">
-              <div class="nav-logo-icon" aria-hidden="true">
+              <div class=".webp" aria-hidden="true">
                 <img src="${urls.logo}" alt="Crianças do Projeto Soul Surf" />
               </div>
               <div class="nav-logo-text">
