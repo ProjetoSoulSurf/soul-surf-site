@@ -3,7 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projeto Social Soul Surf</title>
+  <title>Soul Surf | Projeto Social de Surf e Educação em Itanhaém-SP</title>
+  <meta name="description" content="Projeto social que usa o surf, a educação e a inclusão social para transformar vidas de crianças e adolescentes em situação de vulnerabilidade em Itanhaém-SP. Conheça o projeto e doe.">
+
   <link rel="icon" type="image/png" href="Fotos/Soul Surf ID/favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -223,25 +225,43 @@
     #inicio {
       position: relative;
       background: var(--canvas);
-      padding: 64px 0 100px;
+      padding: 56px 0 64px;
       overflow: hidden;
     }
 
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 64px;
-      align-items: center;
+    .hero-bg-video {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+      z-index: 0;
+      filter: grayscale(75%) sepia(16%) brightness(0.97) contrast(1.05) saturate(1.05);
     }
 
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background: linear-gradient(100deg, rgba(250,249,246,.9) 0%, rgba(250,249,246,.68) 35%, rgba(250,249,246,.32) 65%, rgba(250,249,246,.08) 100%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+    }
+
+    .hero-left { max-width: 620px; }
     .hero-left .label { margin-bottom: 16px; }
 
     .hero-title {
-      font-size: clamp(36px, 4.4vw, 60px);
+      font-size: clamp(30px, 3.2vw, 44px);
       font-weight: 800;
       color: var(--dark-blue);
-      line-height: 1.08;
-      letter-spacing: -1.5px;
+      line-height: 1.2;
+      letter-spacing: -0.8px;
       margin-bottom: 22px;
     }
 
@@ -259,19 +279,6 @@
       gap: 14px;
       flex-wrap: wrap;
       margin-bottom: 0;
-    }
-
-    .hero-photo-wrap {
-      border-radius: var(--radius);
-      overflow: hidden;
-      aspect-ratio: 4/3.1;
-      border: 1px solid var(--border);
-    }
-    .hero-photo-wrap img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center 22%;
     }
 
     /* Botão Primário — fundo azul claro, texto navy */
@@ -937,13 +944,14 @@
       .hero-btns { flex-direction: column; align-items: stretch; }
       .btn-solid, .btn-ghost { min-height: 48px; }
 
-      #inicio { padding: 48px 0 64px; }
+      #inicio { padding: 40px 0 48px; }
 
-      .hero-grid { grid-template-columns: 1fr; gap: 36px; }
-      .hero-right { order: -1; }
-      .hero-photo-wrap { aspect-ratio: 16/10; }
+      .hero-left { max-width: 100%; }
+      .hero-overlay {
+        background: linear-gradient(180deg, rgba(250,249,246,.88) 0%, rgba(250,249,246,.62) 50%, rgba(250,249,246,.28) 100%);
+      }
 
-      .hero-title { font-size: clamp(32px, 8.5vw, 44px); letter-spacing: -1px; margin-bottom: 16px; }
+      .hero-title { font-size: clamp(26px, 6.5vw, 34px); letter-spacing: -0.5px; line-height: 1.25; margin-bottom: 16px; }
       .hero-sub {
         font-size: 16px;
         margin-bottom: 28px;
@@ -1042,7 +1050,6 @@
     .hero-title        { animation: fadeUp .8s cubic-bezier(.2,0,.2,1) .2s  both; }
     .hero-sub          { animation: fadeUp .8s cubic-bezier(.2,0,.2,1) .32s both; }
     .hero-btns         { animation: fadeUp .8s cubic-bezier(.2,0,.2,1) .44s both; }
-    .hero-photo-wrap    { animation: fadeUp .9s cubic-bezier(.2,0,.2,1) .2s  both; }
 
   </style>
 </head>
@@ -1091,19 +1098,18 @@
      2. HERO
 ══════════════════════════════════════════════ -->
 <section id="inicio">
-  <div class="container hero-grid">
+  <video class="hero-bg-video" autoplay muted loop playsinline preload="auto" poster="Fotos/Fundo do Hero/hero-video-poster.jpg">
+    <source src="Fotos/Fundo do Hero/hero2-soulsurf.mp4" type="video/mp4">
+  </video>
+  <div class="hero-overlay"></div>
+  <div class="container hero-content">
     <div class="hero-left">
-      <span class="label">Desde 2021 · Itanhaém-SP</span>
-      <h1 class="hero-title">Do mar<br>pra vida.</h1>
-      <p class="hero-sub">Transformando vidas de crianças e adolescentes em situação de vulnerabilidade através do surf, da educação e da inclusão social.</p>
+      <span class="label">Do mar, pra vida.</span>
+      <h1 class="hero-title">Surf, educação e inclusão social para crianças e adolescentes de Itanhaém.</h1>
+      <p class="hero-sub">Desde 2021, mais de 500 crianças e adolescentes em situação de vulnerabilidade já passaram pelo projeto, muitos deles sem acesso ao mar.</p>
       <div class="hero-btns">
         <a href="como-apoiar.html" class="btn-solid">Doe Agora</a>
         <a href="#sobre" class="btn-ghost">Conheça o projeto →</a>
-      </div>
-    </div>
-    <div class="hero-right">
-      <div class="hero-photo-wrap">
-        <img src="Fotos/Fundo do Hero/Hero Index.jpg" alt="Crianças e adolescentes do Soul Surf reunidos na praia em Itanhaém" class="hero-photo">
       </div>
     </div>
   </div>
@@ -1170,9 +1176,9 @@
         <span class="label">Sobre o Projeto</span>
         <h2 class="s-title">Surf que educa.<br>Comunidade que transforma.</h2>
 
-        <p>Desde 2021, o Soul Surf já impactou mais de 500 crianças e adolescentes de Itanhaém‑SP — muitas delas sem acesso ao mar — através do surf, da educação digital e da consciência ambiental.</p>
+        <p>Desde 2021, o Soul Surf já impactou mais de 500 crianças e adolescentes de Itanhaém-SP, muitas delas sem acesso ao mar, através do surf, da educação digital e da consciência ambiental.</p>
 
-        <p>Acreditamos que o esporte transforma mais do que corpo e mente: ele abre portas, constrói caráter e devolve esperança para quem mais precisa.</p>
+        <p>Para muitos alunos, a primeira aula é a primeira vez que entram no mar. A partir daí, o esporte ensina respeito, cooperação e autoconfiança: valores que eles levam para a escola, para casa e para o resto da vida.</p>
 
         <div style="margin-top: 32px;">
           <a href="nossa-historia.html" class="btn-ghost">Nossa História →</a>
@@ -1190,7 +1196,7 @@
 <section class="ticker-section">
   <div class="ticker-header">
     <strong class="ticker-label">Patrocinadores</strong>
-    <p class="ticker-sub">Marcas e instituições que acreditam no impacto social do Soul Surf e ajudam a ampliar nosso alcance.</p>
+    <p class="ticker-sub">Marcas e instituições que apoiam o Soul Surf e tornam nosso trabalho possível.</p>
   </div>
   <div class="ticker-track-wrap">
     <div class="ticker-track">
@@ -1277,8 +1283,8 @@
 
       <!-- Col 1 — Marca -->
       <div class="foot-col footer-brand">
-        <img src="Fotos/Soul Surf ID/Logo Footer.svg" alt="Soul Surf — Do Mar Pra Vida" class="footer-logo-img">
-        <p class="footer-desc">Transformando vidas de crianças e adolescentes em situação de vulnerabilidade através do surf com esporte, educação e inclusão social em Itanhaém-SP, desde 2021.</p>
+        <img src="Fotos/Soul Surf ID/Logo Footer.svg" alt="Soul Surf, Do Mar Pra Vida" class="footer-logo-img">
+        <p class="footer-desc">Transformando vidas de crianças e adolescentes em situação de vulnerabilidade através do surf, da educação e da inclusão social em Itanhaém-SP, desde 2021.</p>
         <p class="footer-legal-line">Associação de Surf Cibratel · <a href="transparencia.html">CNPJ e documentos →</a></p>
         <div class="socials">
           <a href="https://www.instagram.com/projetosoulsurf/" target="_blank" rel="noopener" class="social-btn" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
