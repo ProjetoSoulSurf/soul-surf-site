@@ -154,13 +154,17 @@
     .btn-whatsapp:hover { background: #1ebe5d; transform: translateY(-2px); }
     .btn-whatsapp svg { width: 18px; height: 18px; fill: #fff; flex-shrink: 0; }
 
-    /* ===== PAGE HERO ===== */
-    .page-hero { background: var(--canvas); padding: 72px 0 80px; text-align: center; }
-    .page-hero-title {
-      font-size: clamp(30px, 4vw, 48px); font-weight: 800; color: var(--dark-blue);
-      letter-spacing: -1.2px; line-height: 1.12; margin-bottom: 16px;
+    /* ===== PAGE BAND ===== */
+    .page-band {
+      position: relative; min-height: 280px; display: flex; align-items: center;
+      overflow: hidden; isolation: isolate; padding: 48px 0 44px;
     }
-    .page-hero p { font-size: 16px; color: var(--body-ink); max-width: 560px; margin: 0 auto; line-height: 1.75; }
+    .page-band-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 30%; z-index: 0; }
+    .page-band-overlay { position: absolute; inset: 0; z-index: 1; background: linear-gradient(120deg, rgba(8,35,74,.88) 0%, rgba(11,84,168,.75) 100%); }
+    .page-band-content { position: relative; z-index: 2; }
+    .page-band-title { font-size: clamp(28px, 3.4vw, 40px); font-weight: 800; color: #fff; letter-spacing: -0.8px; line-height: 1.1; margin-bottom: 10px; }
+    .page-band-sub { font-size: 15px; line-height: 1.6; color: rgba(255,255,255,.82); max-width: 560px; }
+    .page-band-wave { position: absolute; bottom: -1px; left: 0; width: 100%; height: 34px; z-index: 3; display: block; }
 
     /* ===== PESSOA FÍSICA ===== */
     #pessoa-fisica { background: var(--surface-alt); border-top: 1px solid var(--border); }
@@ -306,7 +310,9 @@
       .island-nav { padding: 12px 20px; }
       .section { padding: 68px 0; }
 
-      .page-hero { padding: 48px 0 56px; }
+      .page-band { min-height: 230px; padding: 36px 0 34px; }
+      .page-band-title { font-size: clamp(24px, 7vw, 32px); }
+      .page-band-sub { font-size: 14px; }
 
       .pf-extras { grid-template-columns: 1fr; }
       .pf-card-full { flex-direction: column; align-items: flex-start; gap: 0; }
@@ -366,13 +372,17 @@
   <a href="como-apoiar.html" class="btn-mobile-cta">Doe Agora</a>
 </nav>
 
-<!-- PAGE HERO -->
-<section class="page-hero">
-  <div class="container">
-    <span class="label">Faça a Diferença</span>
-    <h1 class="page-hero-title">Sua doação transforma vidas reais.</h1>
-    <p>Cada contribuição garante mais aulas de surf, mais oportunidades de educação e mais esperança para jovens de Itanhaém-SP.</p>
+<!-- PAGE BAND -->
+<section class="page-band">
+  <img class="page-band-bg" src="Fotos/Fundo do Hero/Hero Como Apoiar.png" alt="" loading="eager">
+  <div class="page-band-overlay"></div>
+  <div class="container page-band-content">
+    <h1 class="page-band-title">Sua doação transforma vidas reais.</h1>
+    <p class="page-band-sub">Cada contribuição garante mais aulas de surf, mais oportunidades de educação e mais esperança para jovens de Itanhaém-SP.</p>
   </div>
+  <svg class="page-band-wave" viewBox="0 0 1440 48" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0,24 C220,48 460,0 720,16 C980,32 1220,48 1440,20 L1440,48 L0,48 Z" fill="#F1F5F9"></path>
+  </svg>
 </section>
 
 <!-- PESSOA FÍSICA -->
