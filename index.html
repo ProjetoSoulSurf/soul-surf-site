@@ -1347,6 +1347,17 @@
      JAVASCRIPT
 ══════════════════════════════════════════════ -->
 <script>
+  /* ─── Vídeo do hero: garante autoplay em navegadores mobile mais restritivos ─── */
+  const heroVideo = document.querySelector('.hero-bg-video');
+  if (heroVideo) {
+    heroVideo.muted = true;
+    const tryPlayHeroVideo = () => heroVideo.play().catch(() => {});
+    tryPlayHeroVideo();
+    ['touchstart', 'click', 'scroll'].forEach(evt => {
+      document.addEventListener(evt, tryPlayHeroVideo, { once: true, passive: true });
+    });
+  }
+
   /* ─── Header: esconde ao rolar para baixo, reaparece ao rolar para cima ─── */
   const header = document.getElementById('site-header');
   const mobileNav = document.getElementById('mobile-nav');
